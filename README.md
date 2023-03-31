@@ -2,9 +2,9 @@
 
 ### Instituto Federal de Mato Grosso
 
-Estudante: João Angello R. O.
-Matrícula: 2015178440352
-Curso: Engenharia da Computação
+Estudante: João Angello R. O.      
+Matrícula: 2015178440352     
+Curso: Engenharia da Computação     
 Disciplina: Redes de Computadores II
 
 ---
@@ -19,11 +19,15 @@ As atividades consistem em configurar as interfaces dos roteadores R1 e R2 e os 
 configure terminal
 int atm1/0
 no shutdown
+exit
 int atm1/0.100 point-to-point
 ip address 10.10.10.1 255.255.255.252
 pvc 100/101
-ip addr 10.10.10.2 broadcast
+protocol ip 10.10.10.2 broadcast
 encapsulation aal5snap
+exit
+exit
+exit
 ```
 
 #### R2:
@@ -31,11 +35,15 @@ encapsulation aal5snap
 configure terminal
 int atm1/0
 no shutdown
+exit
 int atm1/0.100 point-to-point
 ip address 10.10.10.2 255.255.255.252
 pvc 100/201
-ip addr 10.10.10.1 broadcast
+protocol ip 10.10.10.1 broadcast
 encapsulation aal5snap
+exit
+exit
+exit
 ```
 
 Já a configuração dos switches ATM é como segue:
